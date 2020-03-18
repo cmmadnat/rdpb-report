@@ -1,8 +1,11 @@
+/* eslint-disable react/jsx-no-undef */
 import React from 'react';
 import { Navbar, Container, Accordion, Card, Button } from 'react-bootstrap'
 import DataTable from 'react-data-table-component'
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+//@ts-ignore
+import DataTableExtensions from 'react-data-table-component-extensions';
 
 interface RegionReport {
   id: number;
@@ -70,13 +73,19 @@ function App() {
             <Accordion.Collapse eventKey="0">
               <Card.Body>
                 <h3>รายภาค</h3>
-                <DataTable
-                  title="รายงานศูนย์เรียนรู้ ตามสถานะข้อมูล รายภาค"
+                <DataTableExtensions
                   columns={columns}
-                  striped={true}
                   data={data2}
-                  highlightOnHover={true}
-                />
+                  exportHeader={true}
+                >
+                  <DataTable
+                    data={[]}
+                    title="รายงานศูนย์เรียนรู้ ตามสถานะข้อมูล รายภาค"
+                    columns={columns}
+                    striped={true}
+                    highlightOnHover={true}
+                  />
+                </DataTableExtensions>
                 <h3>รายจังหวัด</h3>
               </Card.Body>
             </Accordion.Collapse>
