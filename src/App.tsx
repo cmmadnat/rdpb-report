@@ -38,7 +38,7 @@ const columns = [
     right: true,
   },
   {
-    name: 'ไม่่่ครบถ้วน',
+    name: 'ไม่ครบถ้วน',
     selector: 'incomplete',
     sortable: true,
     right: true,
@@ -73,8 +73,9 @@ function App() {
                 <DataTable
                   title="รายงานศูนย์เรียนรู้ ตามสถานะข้อมูล รายภาค"
                   columns={columns}
-                  className='-striped -highlight'
+                  striped={true}
                   data={data2}
+                  highlightOnHover={true}
                 />
                 <h3>รายจังหวัด</h3>
               </Card.Body>
