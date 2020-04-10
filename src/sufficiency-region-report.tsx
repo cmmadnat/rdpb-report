@@ -60,7 +60,7 @@ const SufficiencyReport = ({ type }: { type: 'status' | 'studyCenter' }) => {
         })
         setData(d)
       })
-  })
+  }, [])
 
   return (
     <>
@@ -71,7 +71,7 @@ const SufficiencyReport = ({ type }: { type: 'status' | 'studyCenter' }) => {
       >
         <DataTable
           data={[]}
-          title="รายงานศูนย์เรียนรู้ ตามประเภทศูนย์เรียนรู้ รายภาค"
+          title={"รายงานศูนย์เรียนรู้ " + (type === 'status' ? 'ตามสถานะข้อมูล' : 'ตามสถานะศูนย์เรียนรู้')}
           columns={columns}
           striped={true}
           highlightOnHover={true}
