@@ -6,6 +6,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import SufficiencyReport from './sufficiency-region-report';
 import { AppTypeReport as SufficiencyTypeReport } from './sufficiency-type-report';
 import { SufficiencyTypeReportProvince } from './sufficiency-type-province-report';
+import SufficiencyReportRegion from './sufficiency-region-by-report';
 
 
 function App() {
@@ -34,6 +35,9 @@ function App() {
                       <>
                         <h3>ทุกภาค</h3>
                         <SufficiencyReport type={'status'} />
+                        <hr />
+                        <h3>รายภาค</h3>
+                        <SufficiencyReportRegion type={'status'} />
                       </>
                     }
                   </Card.Body>
