@@ -13,7 +13,7 @@ export interface TypeReport {
 export interface IAppTypeReportProps {
 }
 
-export function SufficiencyTypeReportProvince() {
+export function StudyTypeReportProvince() {
   const [provinces, setProvinces] = React.useState<string[]>([])
   const [province, setProvince] = React.useState('')
   const [data, setData] = React.useState<TypeReport[]>([])
@@ -26,7 +26,7 @@ export function SufficiencyTypeReportProvince() {
   }, [])
   React.useEffect(() => {
     if (province.length === 0) return;
-    request.get('http://rdpb-2.appspot.com/report2/sufficiencyReport/province/' + province).then(data => data.body)
+    request.get('http://rdpb-2.appspot.com/report2/studyCenter/province/' + province).then(data => data.body)
       .then((d: TypeReport[]) => {
         setData(d)
       })

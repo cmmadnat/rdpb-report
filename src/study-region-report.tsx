@@ -22,7 +22,7 @@ interface RegionReportResponse {
   total: number
 }
 
-const SufficiencyReport = ({ type }: { type: 'status' | 'studyCenter' }) => {
+const StudyReport = ({ type }: { type: 'status' | 'studyCenter' }) => {
   const [data, setData] = useState<RegionReport[]>([])
   const columns = [
     {
@@ -50,7 +50,7 @@ const SufficiencyReport = ({ type }: { type: 'status' | 'studyCenter' }) => {
     },
   ];
   useEffect(() => {
-    request.get('https://rdpb-2.appspot.com/report2/sufficiencyReport/region').then(data => data.body)
+    request.get('https://rdpb-2.appspot.com/report2/studyCenter/region').then(data => data.body)
       .then((data: RegionReportResponse[]) => {
         const d = data.map((it, index) => {
           const c: RegionReport = type === 'status' ?
@@ -80,4 +80,4 @@ const SufficiencyReport = ({ type }: { type: 'status' | 'studyCenter' }) => {
     </>
   )
 }
-export default SufficiencyReport
+export default StudyReport

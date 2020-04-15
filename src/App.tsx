@@ -11,6 +11,10 @@ import RoyalReport from './royal-region-report';
 import RoyalReportRegion from './royal-region-by-report';
 import { AppRoyalTypeReport } from './royal-type-report';
 import { RoyalTypeReportProvince } from './royal-type-province-report';
+import StudyReport from './study-region-report';
+import StudyReportRegion from './study-region-by-report';
+import { StudyTypeReport } from './study-type-report';
+import { StudyTypeReportProvince } from './study-type-province-report';
 
 
 function App() {
@@ -182,10 +186,10 @@ function App() {
                       showTab7 &&
                       <>
                         <h3>ทุกภาค</h3>
-                        <SufficiencyReport type={'status'} />
+                        <StudyReport type={'status'} />
                         <hr />
                         <h3>รายภาค</h3>
-                        <SufficiencyReportRegion type={'status'} />
+                        <StudyReportRegion type={'status'} />
                       </>
                     }
                   </Card.Body>
@@ -203,10 +207,10 @@ function App() {
                       showTab8 &&
                       <>
                         <h3>ทุกภาค</h3>
-                        <SufficiencyReport type={'studyCenter'} />
+                        <StudyReport type={'studyCenter'} />
                         <hr />
                         <h3>รายภาค</h3>
-                        <SufficiencyReportRegion type={'studyCenter'} />
+                        <StudyReportRegion type={'studyCenter'} />
                       </>
                     }
                   </Card.Body>
@@ -224,10 +228,10 @@ function App() {
                       showTab9 &&
                       <>
                         <h3>รวม</h3>
-                        <SufficiencyTypeReport />
+                        <StudyTypeReport />
                         <hr />
                         <h3>รายจังหวัด</h3>
-                        <SufficiencyTypeReportProvince />
+                        <StudyTypeReportProvince />
                       </>
                     }
                   </Card.Body>
