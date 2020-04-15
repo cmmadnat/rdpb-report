@@ -7,6 +7,10 @@ import SufficiencyReport from './sufficiency-region-report';
 import { AppTypeReport as SufficiencyTypeReport } from './sufficiency-type-report';
 import { SufficiencyTypeReportProvince } from './sufficiency-type-province-report';
 import SufficiencyReportRegion from './sufficiency-region-by-report';
+import RoyalReport from './royal-region-report';
+import RoyalReportRegion from './royal-region-by-report';
+import { AppRoyalTypeReport } from './royal-type-report';
+import { RoyalTypeReportProvince } from './royal-type-province-report';
 
 
 function App() {
@@ -108,10 +112,12 @@ function App() {
                       showTab4 &&
                       <>
                         <h3>ทุกภาค</h3>
-                        <SufficiencyReport type={'status'} />
+                        <RoyalReport type={'status'} />
+                        {/* <SufficiencyReport type={'status'} /> */}
                         <hr />
                         <h3>รายภาค</h3>
-                        <SufficiencyReportRegion type={'status'} />
+                        <RoyalReportRegion type={'status'} />
+                        {/* <SufficiencyReportRegion type={'status'} /> */}
                       </>
                     }
                   </Card.Body>
@@ -129,10 +135,10 @@ function App() {
                       showTab5 &&
                       <>
                         <h3>ทุกภาค</h3>
-                        <SufficiencyReport type={'studyCenter'} />
+                        <RoyalReport type={'studyCenter'} />
                         <hr />
                         <h3>รายภาค</h3>
-                        <SufficiencyReportRegion type={'studyCenter'} />
+                        <RoyalReportRegion type={'studyCenter'} />
                       </>
                     }
                   </Card.Body>
@@ -150,10 +156,10 @@ function App() {
                       showTab6 &&
                       <>
                         <h3>รวม</h3>
-                        <SufficiencyTypeReport />
+                        <AppRoyalTypeReport />
                         <hr />
                         <h3>รายจังหวัด</h3>
-                        <SufficiencyTypeReportProvince />
+                        <RoyalTypeReportProvince />
                       </>
                     }
                   </Card.Body>

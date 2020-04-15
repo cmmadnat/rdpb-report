@@ -23,7 +23,7 @@ interface RegionReportResponse {
   total: number
 }
 
-const SufficiencyReportRegion = ({ type }: { type: 'status' | 'studyCenter' }) => {
+const RoyalReportRegion = ({ type }: { type: 'status' | 'studyCenter' }) => {
   const [data, setData] = useState<RegionReport[]>([])
   const [region, setRegion] = useState('ภาคเหนือ')
   const columns = [
@@ -53,7 +53,7 @@ const SufficiencyReportRegion = ({ type }: { type: 'status' | 'studyCenter' }) =
   ];
   useEffect(() => {
     if (region.length === 0) return;
-    request.get('https://rdpb-2.appspot.com/report2/sufficiencyReport/region/' + region).then(data => data.body)
+    request.get('https://rdpb-2.appspot.com/report2/royalStudyCenter/region/' + region).then(data => data.body)
       .then((data: RegionReportResponse[]) => {
         const d = data.map((it, index) => {
           const c: RegionReport = type === 'status' ?
@@ -95,4 +95,4 @@ const SufficiencyReportRegion = ({ type }: { type: 'status' | 'studyCenter' }) =
     </>
   )
 }
-export default SufficiencyReportRegion
+export default RoyalReportRegion
