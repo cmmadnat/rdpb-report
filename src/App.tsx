@@ -17,6 +17,7 @@ import { StudyTypeReport } from './study-type-report';
 import { StudyTypeReportProvince } from './study-type-province-report';
 import { RoyalDevelopmentCenterReport } from './royal-development-center-report';
 import { StudyOrganizationReport } from './study-organization-report';
+import StudyReportRegionOrganization from './study-region-organization-report';
 
 
 function App() {
@@ -211,6 +212,8 @@ function App() {
                         <hr />
                         <h3>รายภาค</h3>
                         <StudyReportRegion type={'status'} />
+                        <h3>หน่วยงาน</h3>
+                        <StudyReportRegionOrganization type={'status'} />
                       </>
                     }
                   </Card.Body>
