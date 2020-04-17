@@ -16,6 +16,7 @@ import StudyReportRegion from './study-region-by-report';
 import { StudyTypeReport } from './study-type-report';
 import { StudyTypeReportProvince } from './study-type-province-report';
 import { RoyalDevelopmentCenterReport } from './royal-development-center-report';
+import { StudyOrganizationReport } from './study-organization-report';
 
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
   const [showTab8, setShowTab8] = useState(false)
   const [showTab9, setShowTab9] = useState(false)
   const [showTab10, setShowTab10] = useState(false)
+  const [showTab11, setShowTab11] = useState(false)
   return (
     <>
       <Navbar bg="light">
@@ -251,6 +253,23 @@ function App() {
                         <hr />
                         <h3>รายจังหวัด</h3>
                         <StudyTypeReportProvince />
+                      </>
+                    }
+                  </Card.Body>
+                </Accordion.Collapse>
+              </Card>
+              <Card>
+                <Card.Header>
+                  <Accordion.Toggle as={Button} variant="link" eventKey="3" onClick={() => setShowTab11(true)}>
+                    รายงานศูนย์เรียนรู้ตามหน่วยงาน
+      </Accordion.Toggle>
+                </Card.Header>
+                <Accordion.Collapse eventKey="3">
+                  <Card.Body>
+                    {
+                      showTab11 &&
+                      <>
+                        <StudyOrganizationReport />
                       </>
                     }
                   </Card.Body>
