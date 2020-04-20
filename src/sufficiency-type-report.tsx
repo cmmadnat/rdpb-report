@@ -15,7 +15,7 @@ export interface IAppTypeReportProps {
 export function AppTypeReport(props: IAppTypeReportProps) {
   const [data, setData] = React.useState<TypeReport[]>([])
   React.useEffect(() => {
-    request.get('http://rdpb-2.appspot.com/report2/sufficiencyReport/type').then(data => data.body)
+    request.get('https://rdpb-2.appspot.com/report2/sufficiencyReport/type').then(data => data.body)
       .then((d: TypeReport[]) => {
         setData(d)
       })

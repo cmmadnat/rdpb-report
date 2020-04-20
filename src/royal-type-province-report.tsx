@@ -18,7 +18,7 @@ export function RoyalTypeReportProvince() {
   const [province, setProvince] = React.useState('')
   const [data, setData] = React.useState<TypeReport[]>([])
   React.useEffect(() => {
-    request.get('http://rdpb-2.appspot.com/report2/provinces').then(data => data.body)
+    request.get('https://rdpb-2.appspot.com/report2/provinces').then(data => data.body)
       .then((d: string[]) => {
         setProvinces(d)
         setProvince(d[0])
@@ -26,7 +26,7 @@ export function RoyalTypeReportProvince() {
   }, [])
   React.useEffect(() => {
     if (province.length === 0) return;
-    request.get('http://rdpb-2.appspot.com/report2/royalStudyCenter/province/' + province).then(data => data.body)
+    request.get('https://rdpb-2.appspot.com/report2/royalStudyCenter/province/' + province).then(data => data.body)
       .then((d: TypeReport[]) => {
         setData(d)
       })
