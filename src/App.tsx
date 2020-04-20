@@ -18,6 +18,7 @@ import { StudyTypeReportProvince } from './study-type-province-report';
 import { RoyalDevelopmentCenterReport } from './royal-development-center-report';
 import { StudyOrganizationReport } from './study-organization-report';
 import StudyReportRegionOrganization from './study-region-organization-report';
+import { StudyTypeOrganizationReport } from './study-type-organization-report';
 
 
 function App() {
@@ -194,7 +195,7 @@ function App() {
 
             </Accordion>
           </Tab>
-          <Tab eventKey="contact" title="ศูนย์เรียนรู้หน่วยงานต่างๆ" >
+          <Tab eventKey="contact" title="ศูนย์เรียนรู้อื่นๆ">
             <Accordion defaultActiveKey="" >
               <Card>
                 <Card.Header>
@@ -212,6 +213,7 @@ function App() {
                         <hr />
                         <h3>รายภาค</h3>
                         <StudyReportRegion type={'status'} />
+                        <hr />
                         <h3>หน่วยงาน</h3>
                         <StudyReportRegionOrganization type={'status'} />
                       </>
@@ -235,6 +237,9 @@ function App() {
                         <hr />
                         <h3>รายภาค</h3>
                         <StudyReportRegion type={'studyCenter'} />
+                        <hr />
+                        <h3>หน่วยงาน</h3>
+                        <StudyReportRegionOrganization type={'studyCenter'} />
                       </>
                     }
                   </Card.Body>
@@ -256,6 +261,9 @@ function App() {
                         <hr />
                         <h3>รายจังหวัด</h3>
                         <StudyTypeReportProvince />
+                        <hr />
+                        <h3>หน่วยงาน</h3>
+                        <StudyTypeOrganizationReport />
                       </>
                     }
                   </Card.Body>
